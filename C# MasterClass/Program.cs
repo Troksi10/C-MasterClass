@@ -5,6 +5,7 @@
 // declaring multiple variables at once
 
 using System.Globalization;
+using System.Runtime.CompilerServices;
 
 int num3, num4, num5;
 
@@ -125,5 +126,49 @@ Console.WriteLine($"Hello,my name is {name}, I am {age} years old.I am {job}.");
 
 string s1 = "this is a \"string\" with \na backslash \\ and a colon";
 Console.WriteLine(s1);
+
+
+// Challenge 01
+// Declare a string variable and don’t assign any value to it.Print on the console “Please enter your name and press enter”.
+// The program should write on the console that string in Uppercase in the first line, then the same string in Lowercase in the second line.  In the third line, it writes on the console the string with no trailing or preceding white space.
+
+string myNameExample ;
+Console.WriteLine("Please enter your name and press enter : ");
+myName = Console.ReadLine();
+string myNameUpperCase = String.Format("Upper case : {0}", myName.ToUpper());
+string myNamelowerCase = String.Format("Lower case : {0}", myName.ToLower());
+string myNameTrimmed = String.Format("Trimmed value : {0}", myName.Trim());
+string myNameSubstring = String.Format("Substring value : {0}", myName.Substring(0,5));
+
+Console.WriteLine(myNameUpperCase);
+Console.WriteLine(myNamelowerCase);
+Console.WriteLine(myNameTrimmed);
+Console.WriteLine(myNameSubstring);
+
+// Challenge 02
+
+// This application asks the user to input a string in the first line like “Enter a string here: ”.
+// In the Second Line, it should ask for the character to search in the string which you have entered in the first line like “Enter the character to search: ”
+//On the third line, it should write the index of the first occurrence of the searched character from the string.
+
+Console.Write("Enter the string here : ");
+string input  = Console.ReadLine();
+
+Console.Write("Enter a Character to search : ");
+char searchInput = Console.ReadLine()[0];
+int searchIndex = input.IndexOf(searchInput);
+Console.WriteLine("Index of character {0} in string is {1}",searchInput,searchIndex);
+
+// Challenge 03
+
+Console.WriteLine("Enter the first name : ");
+string firstName = Console.ReadLine();
+Console.WriteLine("Enter the last name : ");
+string lastName = Console.ReadLine();
+
+// Concatinate to full name
+
+string fullName = string.Concat(firstName," " , lastName);
+Console.WriteLine($"Your full name is {fullName}");
 
 Console.ReadLine();
